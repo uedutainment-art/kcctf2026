@@ -183,12 +183,14 @@
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="showTab('summary')">📊 현황 요약</div>
-  <div class="tab" onclick="showTab('timeline')">📅 타임라인</div>
-  <div class="tab" onclick="showTab('program')">🎭 프로그램</div>
-  <div class="tab" onclick="showTab('promo')">🗺️ 홍보 동선</div>
+  <div class="tab active" data-public="true" onclick="showTab('summary')">📊 현황 요약</div>
+  <div class="tab" data-public="true" onclick="showTab('timeline')">📅 타임라인</div>
+  <div class="tab" data-public="true" onclick="showTab('program')">🎭 프로그램</div>
+  <div class="tab" data-public="true" onclick="showTab('promo')">🗺️ 홍보 동선</div>
   <div class="tab" onclick="showTab('budget')">💰 예산 현황</div>
   <div class="tab" onclick="showTab('produce')">📦 제작물</div>
+  <div class="tab" onclick="showTab('registration')">🎫 등록·가격</div>
+  <div class="tab" onclick="showTab('hotel')">🏨 호텔·버스</div>
 </div>
 
 <!-- ====== 현황 요약 ====== -->
@@ -1052,6 +1054,160 @@
     <div style="font-size:12px; color:var(--text-muted); margin-top:8px;">
       마지막 업데이트: 2026-05-08
     </div>
+  </div>
+
+</div>
+
+<!-- ====== 등록·가격 ====== -->
+<div id="tab-registration" class="content">
+
+  <div class="alert yellow">
+    🔍 현장가·일일권 달러/위안 가격 미확정 · 중국 결제 시스템(까르멘) 구축 필요
+  </div>
+
+  <div class="section">
+    <div class="section-title">🎫 참가비 — 얼리버드 (5/18 이후)</div>
+    <table>
+      <tr>
+        <th>트랙</th><th>한국 (원화)</th><th>해외 (달러)</th><th>중국 (위안)</th><th>비고</th>
+      </tr>
+      <tr>
+        <td><strong>풀패스</strong></td>
+        <td>190,000원</td>
+        <td>$150</td>
+        <td>999위안</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>현장가</strong></td>
+        <td>🔍 미정</td>
+        <td>🔍 미정</td>
+        <td>🔍 미정</td>
+        <td>얼리버드 종료 후 인상</td>
+      </tr>
+      <tr>
+        <td><strong>일일권</strong></td>
+        <td>🔍 미정</td>
+        <td>🔍 미정</td>
+        <td>🔍 미정</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">💳 결제 시스템</div>
+    <table>
+      <tr>
+        <th>대상</th><th>결제 방식</th><th>담당</th><th>상태</th>
+      </tr>
+      <tr>
+        <td>🇰🇷 한국</td>
+        <td>원화 계좌 이체</td>
+        <td>포올</td>
+        <td><span class="badge confirmed">✅ 운영 중</span></td>
+      </tr>
+      <tr>
+        <td>🌏 해외 (달러)</td>
+        <td>신한은행 외환 계좌<br><small style="color:var(--text-muted);">180-039-424155 · SWIFT: SHBKKRSE</small></td>
+        <td>포올</td>
+        <td><span class="badge confirmed">✅ 준비 완료</span></td>
+      </tr>
+      <tr>
+        <td>🇨🇳 중국</td>
+        <td>알리페이 → 한화 수취<br><small style="color:var(--text-muted);">별도 위챗 신청폼 구축 필요</small></td>
+        <td>까르멘</td>
+        <td><span class="badge pending">⏳ 시스템 구축 중</span></td>
+      </tr>
+    </table>
+    <div class="alert yellow" style="margin-top:16px;">
+      🔍 공식 이메일(중국 수신 가능 여부 확인 필요) · 위챗폼 완성 시기 까르멘 확인
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📋 얼리버드 기준</div>
+    <div style="font-size:13px; line-height:1.8; color:var(--text);">
+      · 얼리버드 마감: <strong>5월 18일(월)</strong> 이후 현장가 적용<br>
+      · 중국 위안화 999위안 기준 (≒ 약 190,000원 상당)<br>
+      · 알리페이 수수료·환전 수수료 포함 검토됨<br>
+      · 중국 신청자는 별도 시스템(까르멘 구축) 사용
+    </div>
+  </div>
+
+  <div style="font-size:12px; color:var(--text-muted); margin-top:8px;">
+    마지막 업데이트: 2026-05-13
+  </div>
+
+</div>
+
+<!-- ====== 호텔·버스 ====== -->
+<div id="tab-hotel" class="content">
+
+  <div class="section">
+    <div class="section-title">🏨 숙소 — 더베네치아스위트</div>
+    <table>
+      <tr><th>항목</th><th>내용</th></tr>
+      <tr><td>업체명</td><td><strong>더베네치아스위트</strong></td></tr>
+      <tr><td>주소</td><td>춘천시 (행사장 인근)</td></tr>
+      <tr><td>담당자</td><td>이희준 지배인</td></tr>
+      <tr><td>객실 블로킹</td><td>아티스트 + 일부 참가자 예약 확보</td></tr>
+      <tr><td>비고</td><td>버스 업체(매일관광) 연결해준 곳</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🚌 셔틀버스 업체 — 매일관광</div>
+    <table>
+      <tr><th>항목</th><th>내용</th></tr>
+      <tr><td>업체명</td><td><strong>매일관광</strong></td></tr>
+      <tr><td>담당자</td><td>이창호 부장</td></tr>
+      <tr><td>연락처</td><td><strong>010-5366-0307</strong></td></tr>
+      <tr><td>연락 가능 시점</td><td><strong style="color:var(--yellow);">5월 18일(월) 이후</strong> (현재 휴가 중)</td></tr>
+      <tr><td>견적</td><td>🔍 미확보 (5/18 이후 요청 예정)</td></tr>
+      <tr><td>소개</td><td>더베네치아스위트 이희준 지배인 소개</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🗺️ 춘천 거점 4곳</div>
+    <table>
+      <tr><th>거점</th><th>약칭</th><th>용도</th></tr>
+      <tr><td>춘천 기차역</td><td>🚉 역</td><td>광역 참가자 집결</td></tr>
+      <tr><td>더베네치아스위트</td><td>🏨 호텔</td><td>숙소</td></tr>
+      <tr><td>춘천문화예술회관</td><td>🎭 문화회관</td><td>오프닝 콘서트 (10/3 오전)</td></tr>
+      <tr><td>춘천 봄내체육관</td><td>🏟 체육관</td><td>밀롱가 메인 장소</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📅 일자별 버스 요약</div>
+    <table>
+      <tr><th>날짜</th><th>주요 운행</th></tr>
+      <tr>
+        <td><strong>10/3 토</strong></td>
+        <td>10~11시 역→호텔 픽업 · 11~13시 문화회관 이동 · 14:30 체육관 이동 · 22~04시 M2 순환</td>
+      </tr>
+      <tr>
+        <td><strong>10/4 일</strong></td>
+        <td>13~14시 체육관 집결 · M3 순환(14~19시) · M4 순환(21~03시)</td>
+      </tr>
+      <tr>
+        <td><strong>10/5 월</strong></td>
+        <td>11시 씨티투어 출발 · M5 순환(15~20시) · M6/애프터파티 순환(20~24시)</td>
+      </tr>
+    </table>
+    <div style="font-size:12px; color:var(--text-muted); margin-top:8px;">
+      → 상세 시간표: KCCTF2026_버스운영계획.md 참조
+    </div>
+  </div>
+
+  <div class="alert yellow" style="margin-top:16px;">
+    🔍 광역 셔틀 (서울·부산·대전↔춘천) 수요 파악 후 결정 · 아티스트 픽업 항공편 확정 후 시간 결정
+  </div>
+
+  <div style="font-size:12px; color:var(--text-muted); margin-top:8px;">
+    마지막 업데이트: 2026-05-13
   </div>
 
 </div>
