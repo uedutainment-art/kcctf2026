@@ -12,6 +12,7 @@
     --dark2: #252018;
     --dark3: #2E2820;
     --brown: #3D3020;
+    --bg: #1A1410;
     --text: #E8E0D0;
     --text-muted: #A09880;
     --green: #4CAF7D;
@@ -166,11 +167,77 @@
     border: 1px solid var(--border); border-radius: 4px; padding: 3px 8px;
     font-size: 11px; color: var(--text-muted); margin-left: 8px; }
 
+  /* BG variable (used in details sections) */
+  .bg { background: var(--dark); }
+
+  /* ===== MOBILE RESPONSIVE ===== */
   @media (max-width: 768px) {
-    .header { padding: 16px; }
-    .content { padding: 16px; }
+    /* Header */
+    .header { padding: 12px 14px; }
+    .header h1 { font-size: 15px; letter-spacing: 0; }
+    .header .sub { font-size: 11px; margin-top: 3px; }
+    .header .meta { font-size: 11px; margin-top: 6px; line-height: 1.5; }
+
+    /* Tabs — 가로 스크롤, 글씨 축소 */
+    .tabs { padding: 0 4px; gap: 0; }
+    .tab { padding: 10px 9px; font-size: 11px; }
+
+    /* Content 패딩 줄이기 */
+    .content { padding: 14px 12px; }
+    .section { margin-bottom: 22px; }
+    .section-title { font-size: 13px; }
+
+    /* Summary 카드 — 2열 */
+    .cards { grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 20px; }
+    .card { padding: 12px 8px; }
+    .card .num { font-size: 26px; }
+    .card .label { font-size: 11px; }
+
+    /* ★ 핵심: 테이블 가로 스크롤 */
+    table {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;   /* 셀 안 줄바꿈 방지해서 스크롤 작동 */
+    }
+    /* 단, 내용이 있는 셀은 줄바꿈 허용 */
+    td { white-space: normal; font-size: 12px; padding: 8px 10px; min-width: 60px; }
+    th { font-size: 12px; padding: 8px 10px; white-space: nowrap; }
+    td small { font-size: 10px; }
+
+    /* Alert */
+    .alert { padding: 10px 12px; font-size: 12px; }
+
+    /* Budget */
     .budget-grid { grid-template-columns: 1fr; }
-    .cards { grid-template-columns: repeat(2, 1fr); }
+    .budget-box { padding: 14px; }
+    .budget-row { font-size: 12px; }
+
+    /* Gantt — 스크롤만 */
+    .gantt-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .gantt { min-width: 700px; }
+
+    /* Q 섹션 */
+    .q-list { padding: 10px 12px; }
+    .q-item { font-size: 12px; }
+    .q-person-header { padding: 10px 14px; }
+    .q-person-header .name { font-size: 13px; }
+
+    /* Details (마켓 안내 전문 등) */
+    details div { font-size: 12px !important; padding: 12px !important; }
+
+    /* 역할 정리 badge */
+    .badge { font-size: 10px; padding: 2px 6px; }
+
+    /* Scenario table */
+    .scenario-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .scenario-table th, .scenario-table td { white-space: nowrap; font-size: 11px; padding: 7px 8px; }
+  }
+
+  @media (max-width: 480px) {
+    .header h1 { font-size: 13px; }
+    .tab { padding: 9px 7px; font-size: 10px; }
+    .card .num { font-size: 22px; }
   }
 </style>
 </head>
